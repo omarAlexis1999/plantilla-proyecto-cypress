@@ -6,25 +6,6 @@
 3. Configurar el archivo `.env` basado en `.env.template`
 
 
-
-### Librerias Usadas
-- [Node] - v20.10.0
-- [Cypress] - ^13.6.0
-- [cypress-mochawesome-reporter] - ^3.7.0
-- [@badeball/cypress-cucumber-preprocessor] - ^19.2.0
-- [@cypress/webpack-preprocessor] - ^6.0.0"
-- [cypress-mochawesome-reporter] - ^3.7.0
-- [webpack] - ^5.89.0
-- [dotenv] - ^16.3.1
-- [cypress-dotenv] - ^2.0.0
-
-### Tecnologias Usadas
-
-- Cypress: Framework de automatización de pruebas end-to-end (e2e) basado puramente en JavaScript y creado para la web moderna
-- JavaScript: Lenguaje de programación interpretado
-- Cucumber: Software de testing BDD (Behavior Driven Development)
-
-
 ### Comandos Ejecución proyecto
 
 #### Ejecutar modo visual
@@ -32,9 +13,14 @@
 npm run cypress:open
 ```
 
-#### Ejecutar en Linea de Comandos (headless)
+#### Ejecutar en Linea de Comandos (headless) enviando reporte (Se debe configurar variables de entorno)
 ```
 npm run cypress:run
+```
+
+#### Ejecutar en Linea de Comandos (headless)
+```
+npm run cypress:run-no-report
 ```
 
 #### Variables de Entorno a rellenar
@@ -53,6 +39,23 @@ Esta es un guia de como obtener las variables de entorno, puedes usar tu cuenta 
 | REDIRECT_URL | URL de OAuth 2.0 Playground (https://developers.google.com/oauthplayground) |
 | REFRESH_TOKEN| Campo refresh_token obtenido de OAuth 2.0 Playground de Google Developers |
 
+
+### Librerias Usadas
+- [Node] - v20.10.0
+- [Cypress] - ^13.6.0
+- [cypress-mochawesome-reporter] - ^3.7.0
+- [@badeball/cypress-cucumber-preprocessor] - ^19.2.0
+- [@cypress/webpack-preprocessor] - ^6.0.0"
+- [cypress-mochawesome-reporter] - ^3.7.0
+- [webpack] - ^5.89.0
+- [dotenv] - ^16.3.1
+- [cypress-dotenv] - ^2.0.0
+
+### Tecnologias Usadas
+
+- Cypress: Framework de automatización de pruebas end-to-end (e2e) basado puramente en JavaScript y creado para la web moderna
+- JavaScript: Lenguaje de programación interpretado
+- Cucumber: Software de testing BDD (Behavior Driven Development)
 
 
 ### Logica de Componentes
@@ -127,28 +130,3 @@ Then('el usuario sera dirigido al Home', () => {
   // Implementación para verificar los resultados del login
 });
 ```
-
-
-##### Cada caso de Prueba definido con Gherkin
-
-`Feature`
-
-Se establece el Caso de Prueba con Gherkin
-
-![image](/uploads/d6f21817d38549b43a3988b3c38caf6a/image.png)
-
-##### Tendra una definición de sus pasos
-`Step_definitions`
-
-El archivo HomeSteps JS contiene pasos definidos y sus funcionalidades para cada paso
-Estos pasos se vinculan al archivo .feature
-
-![image](/uploads/09ccfb49016ead9a6cc29d2678e58265/image.png)
-
-##### Y un archivo en la carpeta pages con los metodos necesarios para lograr ejecutar la funcionalidad necesaria
-
-`Pages`
-
-El archivo homePage contiene Funciones que se usaran en la logica de definir pasos (Step Definitions)
-
-![image](/uploads/a88ce2bbb5f1a23c9eea12b57338864e/image.png)
